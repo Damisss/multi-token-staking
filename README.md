@@ -8,7 +8,7 @@ We have used Automated market makers system (e.g. uniSwap) to convert price betw
 # Online demo
 - add goerli testnet into your metamask wallet
 - get some goerli ether here https://goerlifaucet.com/
-- open [staking app](https://sparkling-field-7889.on.fleek.co) to view the staking app in the browser
+- open [staking app](https://bitter-paper-9940.on.fleek.co/) to view the staking app in the browser
 - select the asset you wanna stake then click on faucet in order to get some tokens.
 
 # Configure .env file:
