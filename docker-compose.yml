@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  client:
+    build: ./client
+    ports:
+      - 3000:3000
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+
+  test:
+    build:
+      context: ./smart-contract
+      dockerfile: './Dockerfile.hardhat'
+    volumes:
+      - /app/node_modules
+      - ./smart-contract:/app
+    command: /bin/sh -c ./test.sh
+        
+  localhost:
+    build:
+      context: ./smart-contract
+      dockerfile: './Dockerfile.hardhat'
+    volumes:
+      - /app/node_modules
+      - ./smart-contract:/app
+    ports:
+      - 127.0.0.1:8545:8545
+    command: /bin/sh -c ./localhost.sh        
+  
+  deploy-goerli:
+    build:
+      context: ./smart-contract
+      dockerfile: './Dockerfile.hardhat'
+    volumes:
+      - /app/node_modules
+      - ./smart-contract:/app
+    command: /bin/sh -c ./goerli.sh
+  
